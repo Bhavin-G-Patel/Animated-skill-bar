@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'SFMono';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(170, 170, 170);
+}
+.container{
+    background-color: white;
+    width: 500px;
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 10px 10px 15px black;
+}
+h3{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container .box{
+    width: 100%;
+    margin: 10px 0px;
+}
+.container .box .title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.box .progressbarBox{
+    display: flex;
+    align-items: center;
+}
+.box .progressbarBox .progressBar{
+    width: 100%;
+    height: 10px;
+    background-color: #f2f2f2;
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+}
+.box .progressbarBox .progressBar .line{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    border-radius: 100px;
+    background-color: gold;
+    transition: 0.25s;
+}
+.box .progressbarBox .incresePercentage{
+    margin-left: 10px;
+    font-size: 25px;
+}
+.box .progressbarBox .totalPercentage{
+    display: none;
+}

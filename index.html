@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Skill Bar</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/fontcss.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h3>Dynamic Bars</h3>
+            <div class="box">
+                <p class="title">HTML</p>
+                <div class="progressbarBox">
+                    <div class="progressBar">
+                        <span class="line"></span>
+                    </div>
+                    <p class="incresePercentage">0%</p>
+                    <div class="totalPercentage">20%</div>
+                </div>
+            </div>
+            <div class="box">
+                <p class="title">CSS</p>
+                <div class="progressbarBox">
+                    <div class="progressBar">
+                        <span class="line"></span>
+                    </div>
+                    <p class="incresePercentage">0%</p>
+                    <div class="totalPercentage">30%</div>
+                </div>
+            </div>
+            <div class="box">
+                <p class="title">JAVASCRIPT</p>
+                <div class="progressbarBox">
+                    <div class="progressBar">
+                        <span class="line"></span>
+                    </div>
+                    <p class="incresePercentage">0%</p>
+                    <div class="totalPercentage">40%</div>
+                </div>
+            </div>
+            <div class="box">
+                <p class="title">NODE JS</p>
+                <div class="progressbarBox">
+                    <div class="progressBar">
+                        <span class="line"></span>
+                    </div>
+                    <p class="incresePercentage">0%</p>
+                    <div class="totalPercentage">50%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    let boxs = document.querySelectorAll(".box");
+    window.onload = function(){
+        setTimeout(()=>{
+            loadBars();
+        },1000)
+    }
+    function loadBars(){
+        boxs.forEach((ele)=>{
+            let line = ele.querySelector(".line");
+            let incresePercentage = ele.querySelector(".incresePercentage");
+            let totalPercentage = ele.querySelector(".totalPercentage");
+
+            let per = 0;
+            let myInterval = setInterval(()=>{
+                per++;
+                line.style.width= per + "%";
+                incresePercentage.innerHTML = per + "%";
+                if(incresePercentage.innerHTML == totalPercentage.innerHTML){
+                    clearInterval(myInterval);
+                }
+            },25)
+        })
+    }
+
+</script>
+</html>
